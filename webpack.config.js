@@ -11,5 +11,18 @@ module.exports = {
         contentBase: './dist',
         port: 3000
     },
-    plugins: [new HtmlWebpackPlugin()]
+    module:{
+        rules:[
+            {
+                test:/\.css$/,
+                use:['style-loader','css-loader']
+            }
+        ]
+    },
+    plugins: [new HtmlWebpackPlugin({
+        inject: false,
+        hash: true,
+        template: './src/index.html',
+        filename: 'index.html'
+    })]
 };

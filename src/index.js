@@ -1,3 +1,5 @@
+import './styles/styles.css';
+
 function helloWorld() {
     let element = document.createElement('div');
 
@@ -6,4 +8,4 @@ function helloWorld() {
     return element;
 }
 
-document.body.appendChild(helloWorld());
+// document.body.appendChild(helloWorld());
