@@ -6,10 +6,10 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #d4d4d4;
     display: grid;
-    grid-template-columns: auto 1000px auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: 60px auto 60px;
     grid-template-areas: "header header header" ". app ." "footer footer footer";
 }
@@ -87,6 +87,8 @@ footer {
     grid-template-areas: ". sort" "filter articles";
     grid-column-gap: 50px;
     grid-row-gap: 40px;
+    padding: 0 1em;
+    max-width: 1000px;
 }
 
 .container .sort {
@@ -179,7 +181,7 @@ ul li:first-child {
     width: 100%;
     height: 90px;
     margin: 2em 0;
-    clip-path: polygon(0% 0%, 0% 100%, 18% 100%, 18% 0%, 20% 0%, 50% 0%, 50% 30%,20% 30%, 20% 0, 20% 45%, 100% 45%, 100% 70%, 20% 70%, 20% 75%, 100% 75%, 100% 100%, 20% 100%, 20% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 18% 100%, 18% 0%, 20% 0%, 50% 0%, 50% 30%, 20% 30%, 20% 0, 20% 45%, 100% 45%, 100% 70%, 20% 70%, 20% 75%, 100% 75%, 100% 100%, 20% 100%, 20% 0%);
     background: linear-gradient(90deg, #aaaaaa, #e1e1e1, #b9b9b9);
     background-size: 600% 600%;
 
@@ -199,19 +201,39 @@ ul li:first-child {
 }
 
 @-webkit-keyframes spinnerAnimation {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
+    0% {
+        background-position: 0% 51%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 51%
+    }
 }
+
 @-moz-keyframes spinnerAnimation {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
+    0% {
+        background-position: 0% 51%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 51%
+    }
 }
+
 @keyframes spinnerAnimation {
-    0%{background-position:0% 51%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 51%}
+    0% {
+        background-position: 0% 51%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 51%
+    }
 }
 
 .article:first-child {
@@ -221,9 +243,9 @@ ul li:first-child {
 .articles .article:hover {
     opacity: 1;
     background: #FFF;
-    -webkit-box-shadow: 0px 0px 5px 10px rgba(255,255,255,1);
-    -moz-box-shadow: 0px 0px 5px 10px rgba(255,255,255,1);
-    box-shadow: 0px 0px 5px 10px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 0px 5px 10px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 5px 10px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 5px 10px rgba(255, 255, 255, 1);
 }
 
 .article .thumbnail {
@@ -236,7 +258,7 @@ ul li:first-child {
     margin-left: 1em;
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto;
     grid-template-rows: min-content auto;
     grid-template-areas: "title date" "preamble preamble";
 }
@@ -261,4 +283,27 @@ ul li:first-child {
     max-height: 32px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+        grid-template-areas: "header header header" "app app app" "footer footer footer";
+    }
+
+    ul li {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    .container {
+        grid-template-areas: "filter sort" "articles articles";
+        max-width: unset;
+    }
+}
+
+@media (max-width: 575px) {
+    body {
+        font-size: 18px;
+    }
 }
