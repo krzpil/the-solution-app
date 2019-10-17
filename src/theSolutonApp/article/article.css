@@ -1,0 +1,123 @@
+.checkbox {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 1px solid #555;
+    vertical-align: text-bottom;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.checkbox.checked:after {
+    content: '';
+    position: absolute;
+    width: 0.5em;
+    height: 1em;
+    border: solid;
+    border-width: 0 2px 2px 0;
+    transform-origin: 160% 70%;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: min-content auto;
+    grid-template-areas: ". sort" "filter articles";
+    grid-column-gap: 50px;
+    grid-row-gap: 40px;
+    padding: 0 1em;
+}
+
+.container .sort {
+    grid-area: sort;
+    justify-self: end;
+    cursor: pointer;
+}
+
+.container .sort:hover a {
+    text-decoration: underline;
+}
+
+.container .sort .icon {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-bottom: 3px;
+    transform-origin: 7px 7px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.container .sort.desc .icon {
+    animation: rotateSortIconDesc 800ms forwards;
+    -webkit-animation: rotateSortIconDesc 800ms forwards;
+}
+
+.container .sort.asc .icon {
+    animation: rotateSortIconAsc 800ms forwards;
+    -webkit-animation: rotateSortIconAsc 800ms forwards;
+}
+
+@keyframes rotateSortIconDesc {
+    0% {
+        transform: rotate(-135deg) scale(1);
+        -webkit-transform: rotate(-135deg) scale(1);
+    }
+    33% {
+        transform: rotate(-135deg) scale(1.3);
+        -webkit-transform: rotate(-135deg) scale(1.3);
+    }
+    66% {
+        transform: rotate(45deg) scale(1.3);
+        -webkit-transform: rotate(45deg) scale(1.3);
+    }
+    100% {
+        transform: rotate(45deg) scale(1);
+        -webkit-transform: rotate(45deg) scale(1);
+    }
+}
+
+@keyframes rotateSortIconAsc {
+    0% {
+        transform: rotate(45deg) scale(1);
+        -webkit-transform: rotate(45deg) scale(1);
+    }
+    33% {
+        transform: rotate(45deg) scale(1.3);
+        -webkit-transform: rotate(45deg) scale(1.3);
+    }
+    66% {
+        transform: rotate(-135deg) scale(1.3);
+        -webkit-transform: rotate(-135deg) scale(1.3);
+    }
+    100% {
+        transform: rotate(-135deg) scale(1);
+        -webkit-transform: rotate(-135deg) scale(1);
+    }
+}
+
+.container .filter {
+    grid-area: filter;
+    justify-self: end;
+    white-space: nowrap;
+}
+
+.container .articles {
+    grid-area: articles;
+}
+
+@media (max-width: 767px) {
+    .container {
+        grid-template-areas: "filter sort" "articles articles";
+        max-width: unset;
+    }
+
+    .container .filter {
+        justify-self: start;
+    }
+}

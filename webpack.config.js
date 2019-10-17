@@ -11,12 +11,15 @@ module.exports = {
         contentBase: './dist',
         port: 3000
     },
-    module:{
-        rules:[
+    module: {
+        rules: [
             {
-                test:/\.css$/,
-                use:['style-loader','css-loader']
-            }
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }, {
+                test: /\.(png)$/,
+                use: ['file-loader']
+            },
         ]
     },
     plugins: [new HtmlWebpackPlugin({

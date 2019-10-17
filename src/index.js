@@ -1,11 +1,3 @@
-import './styles/styles.css';
+import { TheSolutionApp } from './theSolutonApp/the-solution-app.module';
 
-function helloWorld() {
-    let element = document.createElement('div');
-
-    element.innerHTML = 'Hello world';
-
-    return element;
-}
-
-// document.body.appendChild(helloWorld());
+TheSolutionApp.init();
