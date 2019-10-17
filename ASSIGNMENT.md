@@ -1,7 +1,7 @@
 # Schibsted Frontend Assignment
 Your task is to develop a frontend application that will display list of article previews.
 You are expected to fetch data from a mock api (`server.js`) provided along with this assignment.
-We have prepared a simple skeleton app for you (check out [README.md](README.md))
+We have prepared a simple skeleton app for you (check out [README.md.bak](README.md.bak))
 
 The user of this app should be able to:
  1. view a list of articles containing image, title, preamble and publication date
