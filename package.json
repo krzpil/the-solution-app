@@ -4,16 +4,20 @@
   "description": "frontend assignment task js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "babel-node spec/run.js",
     "dev": "webpack-dev-server",
     "build": "webpack"
   },
   "author": "STP",
   "license": "UNLICENSED",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "jasmine": "^3.5.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2",
